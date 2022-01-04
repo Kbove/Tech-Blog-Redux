@@ -16,7 +16,9 @@
     "nodemon": "^2.0.15",
     "sequelize": "^6.12.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/express-handlebars": "^6.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"

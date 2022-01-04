@@ -3,6 +3,7 @@ const { User, Post, Comment } = require('../models')
 const withAuth = require('../utils/auth')
 
 router.get('/', async (req, res) => {
+    console.log('break point 3')
     try {
         const postData = await Post.findAll({
             include: [
@@ -44,7 +45,8 @@ router.get('/post/:id', async (req, res) => {
     }
 })
 
-router.get('profile', withAuth, async (req, res) => {
+router.get('/profile', withAuth, async (req, res) => {
+    console.log('get profile break point')
     try {
         const userData = await User.findByPk(req.session.user_id, {
             attribute: { exclude: ['password']},
@@ -63,12 +65,13 @@ router.get('profile', withAuth, async (req, res) => {
 })
 
 router.get('/login', (req, res) => {
-
+    console.log("break point")
     if (req.session.logged_in) {
         res.redirect('/profile')
+        console.log('break point 2')
         return
     }
-
+    console.log('break point 3')
     res.render('login')
 })
 
