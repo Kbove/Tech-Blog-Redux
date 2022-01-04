@@ -27,6 +27,13 @@ Comment.init(
                 key: 'id',
             }
         },
+        post_id: {
+            type: DataTypes.STRING,
+            references: {
+                model: 'post',
+                key: 'id',
+            },
+        },
         date_created: {
             type: DataTypes.DATE,
             allowNull: false,

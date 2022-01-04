@@ -62,6 +62,24 @@ router.get('/profile', withAuth, async (req, res) => {
     }
 })
 
+router.get('/dashboard', withAuth, async (req, res) => {
+    try {
+        const dashboardData = await User.findByPk(req.session.user_id, {
+            attribute: { exclude: ['password']},
+            include: [{model: Post}],
+        })
+        
+        const dashboard = dashboardData.get({plain:true})
+
+        res.render('dashboard', {
+            ...dashboard,
+            logged_in: true
+        })
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
+
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/profile')
