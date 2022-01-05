@@ -31,9 +31,12 @@ router.get('/post/:id', async (req, res) => {
                     model: User,
                     attributes: ['name'],
                 },
+                {
+                    model: Comment,
+                    attributes: ['description'],
+                }
             ]
         })
-
         const post = postData.get({ plain: true})
         res.render('post', {
             ...post,
@@ -66,7 +69,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     try {
         const dashboardData = await User.findByPk(req.session.user_id, {
             attribute: { exclude: ['password']},
-            include: [{model: Post}],
+            include: [{model: Post, Comment}],
         })
         
         const dashboard = dashboardData.get({plain:true})

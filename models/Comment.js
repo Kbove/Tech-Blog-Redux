@@ -12,11 +12,7 @@ Comment.init(
             primaryKey: true,
             autoIncrement: true
         },
-        contents: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        creator_name: {
+        description: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -28,7 +24,7 @@ Comment.init(
             }
         },
         post_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             references: {
                 model: 'post',
                 key: 'id',

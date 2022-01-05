@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homepage</title>
+  <title>Blog</title>
   {{!-- <link rel="stylesheet" href="/css/jass.css"> --}}
   {{!-- <link rel="stylesheet" href="/css/style.css"> --}}
 </head>
@@ -13,7 +13,7 @@
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
-          Welcome to the Homepage!
+        Handlebars Blog Site
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
@@ -37,6 +37,7 @@
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
+  {{!-- <script src="/js/post.js"></script> --}}
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>

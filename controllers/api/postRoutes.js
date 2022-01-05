@@ -22,7 +22,6 @@ router.delete('/:id', withAuth, async (req, res) => {
                 user_id: req.session.user_id,
             }
         })
-        console.log('post delete breakpoint')
 
         if (!postData) {
             res.status(404).json({ message: 'No post found with this id'})
