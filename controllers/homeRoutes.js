@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
                 },
             ]
         })
-        const posts = postData.map((post) => post.get({plain: true}))
+        const posts = postData.map((post) => post.get({ plain: true }))
 
         res.render('homepage', {
             posts,
@@ -33,11 +33,25 @@ router.get('/post/:id', async (req, res) => {
                 },
                 {
                     model: Comment,
-                    attributes: ['description', 'id', 'user_id'],
                 }
             ]
         })
-        const post = postData.get({ plain: true})
+        const post = postData.get({ plain: true })
+        for (let i = 0; i < post.comments.length; i++) {
+            try {
+                const commenterName = await User.findByPk(post.comments[i].user_id, {
+                    attributes: ['name']
+                })
+                console.log('breakpoint?')
+                const name = commenterName.get({plain: true})
+                console.log('name', name.name)
+                const key = 'name'
+                post.comments[i][key] = name.name
+            } catch (err) {
+                res.status(500).json(err)
+            }
+        }
+        console.log('post data', post.comments)
         res.render('post', {
             ...post,
             logged_in: req.session.logged_in
@@ -50,11 +64,11 @@ router.get('/post/:id', async (req, res) => {
 router.get('/profile', withAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
-            attribute: { exclude: ['password']},
-            include: [{model: Post}],
+            attribute: { exclude: ['password'] },
+            include: [{ model: Post }],
         })
 
-        const user = userData.get({plain:true})
+        const user = userData.get({ plain: true })
 
         res.render('profile', {
             ...user,
@@ -68,11 +82,13 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
         const dashboardData = await User.findByPk(req.session.user_id, {
-            attribute: { exclude: ['password']},
-            include: [{model: Post, Comment}],
+            attribute: { exclude: ['password'] },
+            include: [{ model: Post, Comment }],
         })
-        
-        const dashboard = dashboardData.get({plain:true})
+        console.log('dashboard data', dashboardData)
+
+        const dashboard = dashboardData.get({ plain: true })
+        console.log('dashboard data', dashboard)
 
         res.render('dashboard', {
             ...dashboard,
@@ -93,7 +109,7 @@ router.get('/homepage', async (req, res) => {
                 },
             ]
         })
-        const posts = postData.map((post) => post.get({plain: true}))
+        const posts = postData.map((post) => post.get({ plain: true }))
 
         res.render('homepage', {
             posts,

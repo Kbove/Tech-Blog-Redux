@@ -1,3 +1,5 @@
+
+
 const newCommentHandler = async (event) => {
     event.preventDefault()
 
@@ -17,6 +19,8 @@ const newCommentHandler = async (event) => {
         }
     }
 }
+
+
 
 const comDeleteHandler = async (event) => {
     event.preventDefault()

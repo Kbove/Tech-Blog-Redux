@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Comment } = require('../../models')
+const { Comment, User } = require('../../models')
 const withAuth = require('../../utils/auth')
 
 router.post('/', withAuth, async (req, res) => {
@@ -24,7 +24,7 @@ router.delete('/:id', withAuth, async (req, res) => {
             }
         })
 
-        res.status(200).json()
+        res.status(200).json(deletedComment)
     } catch (err) {
         res.status(404).json({ message: 'Failed to delete comment'})
     }

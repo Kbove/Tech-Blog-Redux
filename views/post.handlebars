@@ -1,17 +1,17 @@
 <div class="text-center">
   <h2>{{title}}</h2>
-  <p>{{contents}}</p>
+  <h4>{{contents}}</h4>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
   <p>
   <h3>Comments</h3>
   {{#if comments.length}}
   <div class="col-md-6 comment-list">
     <h3>Leave a comment</h3>
-
     {{#each comments as |comment|}}
     <div class="row mb-2">
       <div class="col-md-8">
         <h4>{{comment.description}}</h4>
+        <p>{{comment.name}} on {{format_date comment.date_created}}</p>
       </div>
       <div class="col-md-4 delComBtn">
         <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
