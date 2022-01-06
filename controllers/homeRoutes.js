@@ -42,16 +42,13 @@ router.get('/post/:id', async (req, res) => {
                 const commenterName = await User.findByPk(post.comments[i].user_id, {
                     attributes: ['name']
                 })
-                console.log('breakpoint?')
                 const name = commenterName.get({plain: true})
-                console.log('name', name.name)
                 const key = 'name'
                 post.comments[i][key] = name.name
             } catch (err) {
                 res.status(500).json(err)
             }
         }
-        console.log('post data', post.comments)
         res.render('post', {
             ...post,
             logged_in: req.session.logged_in
