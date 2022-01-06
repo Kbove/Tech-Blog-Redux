@@ -5,8 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog</title>
-  {{!-- <link rel="stylesheet" href="/css/jass.css"> --}}
-  {{!-- <link rel="stylesheet" href="/css/style.css"> --}}
+  {{!--
+  <link rel="stylesheet" href="/css/jass.css"> --}}
+  {{!--
+  <link rel="stylesheet" href="/css/style.css"> --}}
 </head>
 
 <body>
@@ -19,9 +21,11 @@
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/dashboard">dashboard</a>
-        <a href="/profile">profile</a> 
-        <button class="no-button" id="logout">logout</button>
+        <a href="/profile">profile</a>
+        <a href="/homepage">homepage</a>
+        <a href="#" class="no-button" id="logout">logout</a>
         {{else}}
+        <a href="/homepage">homepage</a>
         <a href="/login">login</a>
         {{/if}}
       </nav>
@@ -31,13 +35,14 @@
       {{{ body }}}
     </main>
     <footer>
-      
+
     </footer>
   </div>
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
-  {{!-- <script src="/js/post.js"></script> --}}
+  {{!--
+  <script src="/js/post.js"></script> --}}
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
