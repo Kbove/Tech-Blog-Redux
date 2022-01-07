@@ -57,6 +57,8 @@
     display: flex;
     justify-content: space-between;
     background-color: black;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 .title-contribution a:link {
@@ -84,4 +86,57 @@
 .contribution {
     border: 1px solid black;
     display: grid;
+}
+
+.post-contents-home {
+    padding-left: 15px;
+}
+
+.profile-container {
+    padding-left: 10px;
+}
+
+.welcome {
+    font-size: x-large;
+    padding-left: 10px;
+}
+
+.name {
+    color: crimson;
+}
+
+form {
+    margin-bottom: 10px;
+}
+
+.form-contents {
+    display: flex;
+}
+
+.label-container {
+    width: 155px;
+}
+
+#post-contents {
+    margin: 0;
+    width: 500px;
+    height: 100px;
+}
+
+label.contents {
+    margin-bottom: 20px;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+}
+
+.form-group {
+
+    padding: 10px;
+}
+
+.form-input {
+    
 }

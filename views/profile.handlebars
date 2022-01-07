@@ -1,24 +1,27 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+<div class="row welcome-header">
+  <div class="col-auto welcome">
+    <h2>Welcome, <span class="name">{{name}}</span>!</h2>
   </div>
 </div>
 
-<div class="row mt-4">
+<div class="row mt-4 profile-container">
   <div class="col-md-6">
     <h3>Create a New Post:</h3>
 
+
     <form class="form new-post-form">
       <div class="form-group">
-        <label for="post-name">Post name:</label>
+        <label for="post-name">Post Title</label>
         <input class="form-input" type="text" id="post-name" name="post-name" />
       </div>
-      <div class="form-group">
-        <label for="post-desc">Contents:</label>
+      <div class="form-group form-contents">
+        <div class="label-container">
+        <label class="contents" for="post-desc">Contents</label>
+        </div>
         <textarea class="form-input" id="post-contents" name="post-contents"></textarea>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
       </div>
     </form>
   </div>
@@ -33,7 +36,7 @@
         <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">Delete</button>
       </div>
     </div>
     {{/each}}
