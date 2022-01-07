@@ -1,3 +1,4 @@
+<div class="profile-page">
 <div class="row welcome-header">
   <div class="col-auto welcome">
     <h2>Welcome, <span class="name">{{name}}</span>!</h2>
@@ -6,7 +7,7 @@
 
 <div class="row mt-4 profile-container">
   <div class="col-md-6">
-    <h3>Create a New Post:</h3>
+    <h3>Create a New Post</h3>
 
 
     <form class="form new-post-form">
@@ -28,7 +29,7 @@
 
   {{#if posts.length}}
   <div class="col-md-6 post-list">
-    <h3>Current Posts:</h3>
+    <h3>Current Posts</h3>
 
     {{#each posts as |post|}}
     <div class="row mb-2">
@@ -42,6 +43,7 @@
     {{/each}}
   </div>
   {{/if}}
+</div>
 </div>
 
 <script src="./js/profile.js"></script>
