@@ -1,10 +1,16 @@
 <div class="text-center">
-  <h2>{{title}}</h2>
-  <h4>{{contents}}</h4>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
+  <div class="row mb-4 project posts">
+    <div class="col-md-5 title-contribution">
+      <h2 class="blog-title">{{title}}</h2>
+      <p>Created by {{user.name}} on {{format_date date_created}}</p>
+    </div>
+    <p class="post-contents-home">
+      {{contents}}
+    </p>
+  </div>
   <p>
-  {{#if comments.length}}
-  <div class="col-md-6 comment-list">
+    {{#if comments.length}}
+  <div style="padding-left: 30px;" class="col-md-6 comment-list">
     <h3>Leave a comment</h3>
     {{#each comments as |comment|}}
     <div class="row mb-2">
@@ -20,8 +26,8 @@
   </div>
   {{/if}}
   {{#if logged_in}}
-  <textarea id="comment-box"></textarea>
-  <button class="btn btn-primary" id="commentBtn" data-id="{{id}}">Comment</button>
+  <textarea style="margin-left: 30px; margin-top: 20px;" id="comment-box"></textarea>
+  <button style="margin-bottom: 20px;" class="btn btn-primary" id="commentBtn" data-id="{{id}}">Comment</button>
   {{else}}
   <p>Login or sign-up to leave a comment</p>
   {{/if}}
@@ -29,4 +35,4 @@
   </p>
 </div>
 
-  <script src="/js/post.js"></script>
+<script src="/js/post.js"></script>

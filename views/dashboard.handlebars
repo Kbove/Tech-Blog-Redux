@@ -1,15 +1,12 @@
   {{#if posts.length}}
   <div class="col-md-6 post-list">
-    <h2>My Posts</h2>
+    <h2 style="">My Posts</h2>
 
     {{#each posts as |post|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
+<div data-id="{{post.id}}" class="row mb-4 project posts">
+      <div class="col-md-8" style="background-color: black; padding-left: 20px;">
+        <h4 style="font-size: x-large; background-color: black;"><a href="/post/{{post.id}}">{{post.title}}</a></h4>
           <p>{{post.contents}}</p>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
