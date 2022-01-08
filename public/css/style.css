@@ -145,3 +145,43 @@ label {
     color: crimson;
 }
 
+@media screen and (max-width: 768px) {
+    .navBar {
+        font-weight: bold;
+        color: white;
+        padding: 30px;
+        padding-left: 10px;
+        display: grid;
+        text-align: center;
+        width: 90vw;
+    }
+    
+    .navBar a:visited {
+        color: white;
+        text-decoration: none;
+    }
+    
+    .navBar a:link {
+        text-decoration: none;
+        color: white;
+        padding: 20px;
+        background-color: grey;
+        margin:5px;
+    }
+    
+    .navBar a:hover {
+        background-color: crimson ;
+        border: 3px solid white;
+        color: white;
+    }
+    .form-contents {
+        display: grid;
+    }
+    #post-contents {
+        height: 20vh;
+        width: 85vw;
+    }
+    #post-title {
+        margin-bottom: 20px;
+    }
+}
