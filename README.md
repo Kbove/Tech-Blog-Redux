@@ -25,7 +25,8 @@ The following necessary dependencies must be installed to run the application: R
 Everyone has something that they're passionate about, and giving them a platform to write about their passions and discuss them at length is what this application will allow them to do
     
 ## Licenses <a id="Screenshot"></a>
-
+![desktop](https://user-images.githubusercontent.com/89953218/148660734-cf652d02-30e6-4a3e-97a2-e1bd0574b498.JPG)
+![mobile](https://user-images.githubusercontent.com/89953218/148660746-6baf9def-4bbb-4433-8c6f-6c057102b8ca.JPG)
 
 ## Contributors <a id="Contributors"></a>
 Contributors: Me
