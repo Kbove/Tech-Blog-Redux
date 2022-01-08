@@ -1,5 +1,7 @@
 # Tech-Blog-Redux
 https://github.com/kbove/Tech-Blog-Redux
+
+Deployed App: https://tech-blog-redux.herokuapp.com/homepage
     
 ## Description
 This is a full stack web application that uses handlebars, JavaScript, Express, Node, and MySQL. It's a simple mblog website where users can create an account, write blog posts, and interact with others via a comment board
