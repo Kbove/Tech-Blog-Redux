@@ -1,6 +1,5 @@
 # Tech-Blog-Redux
 https://github.com/kbove/Tech-Blog-Redux
-
 Deployed App: https://tech-blog-redux.herokuapp.com/homepage
     
 ## Description
