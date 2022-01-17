@@ -10,6 +10,8 @@ This is a full stack web application that uses handlebars, JavaScript, Express, 
 * [Installation](#Installation)
     
 * [User Story](#Usage)
+
+* [Features](#Features)
     
 * [Screenshot](#Screenshot)
     
@@ -24,6 +26,13 @@ The following necessary dependencies must be installed to run the application: R
     
 ## User Story <a id="Usage"></a>
 Everyone has something that they're passionate about, and giving them a platform to write about their passions and discuss them at length is what this application will allow them to do
+
+## Features <a id="Features"></a>
+- Users can create an account with their credentials
+- They can then create new posts from their profiles
+- They can go and view all of the posts that they've created, and the comments associated with the posts
+- They can see all of the posts everyone has created on the homepage and leave comments underneath them
+
     
 ## Screenshots <a id="Screenshot"></a>
 ![desktop](https://user-images.githubusercontent.com/89953218/148660734-cf652d02-30e6-4a3e-97a2-e1bd0574b498.JPG)
